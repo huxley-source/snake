@@ -1,10 +1,11 @@
 (ns snake.core
-    (:require [reagent.core :as reagent]
-              [re-frame.core :as rf]
-              [snake.events]
-              [snake.subs]
-              [snake.views :as views]
-              [snake.config :as config]))
+  (:require [reagent.core :as reagent]
+            [re-frame.core :as rf]
+            [snake.events]
+            [snake.subs]
+            [snake.views :as views]
+            [snake.config :as config]
+            [snake.utils :as utils]))
 
 
 (defn dev-setup []
@@ -22,8 +23,8 @@
 (.addEventListener js/document "keydown"
                    (fn [e]
                      (.preventDefault e)
-                     (rf/dispatch [:change-direction (.-keyCode e)])))
-
+                     (when-let [direction (get utils/key-code->move (.-keyCode e))]
+                       (rf/dispatch [:change-direction direction]))))
 
 
 (defn ^:export init []

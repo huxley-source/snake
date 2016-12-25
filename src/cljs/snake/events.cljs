@@ -9,6 +9,8 @@
   (fn [_ _]
     db/default-db))
 
+
+
 (rf/reg-event-fx
   :start-game
   (fn [{:keys [db]} _]
@@ -41,10 +43,8 @@
 
 (rf/reg-event-fx
   :change-direction
-  (fn [{:keys [db]} [_ key-code]]
+  (fn [{:keys [db]} [_ new-direction]]
     (let [old-direction (get-in db [:snake :direction])
-          new-direction (or (utils/key-code->move key-code)
-                            old-direction)
           block? (get-in db [:snake :block])
           game-state (get db :game-state)
           base-cofx {:db         db
