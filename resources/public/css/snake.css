@@ -1,0 +1,37 @@
+body {
+    background-color: white;
+}
+
+.grid-cell {
+    box-sizing: border-box;
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    border: 1px solid #999999;
+    /*background-color: #332F28;*/
+    font-family: monospace;
+}
+
+.snake-body {
+    background-color: crimson;
+}
+
+.food {
+    background-color: lime;
+}
+
+.grid-game-paused {
+    box-shadow: 0px 0px 15px 3px yellow;
+}
+
+.grid-game-started {
+    box-shadow: 0px 0px 15px 3px steelblue;
+}
+
+.grid-game-game-over {
+    box-shadow: 0px 0px 15px 3px crimson;
+}
+
+.grid-game-victory {
+    box-shadow: 0px 0px 15px 3px lime;
+}

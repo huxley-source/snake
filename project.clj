@@ -16,9 +16,10 @@
 
   :profiles
   {:dev
-   {:dependencies [[binaryage/devtools "0.8.2"]]
+   {:dependencies [[binaryage/devtools "0.8.2"]
+                   [figwheel-sidecar "0.5.7"]]
 
-    :plugins      [[lein-figwheel "0.5.7"]]
+    :plugins      []
     }}
 
   :cljsbuild
