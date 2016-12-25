@@ -109,8 +109,6 @@
     (let [[rows cols] (get db :grid)
           snake-body (get-in db [:snake :body])
           [head-row head-col] (first snake-body)]
-      ;(println :snake-body snake-body
-      ;         :distinct (distinct? snake-body))
       (if (or (< head-row 0) (>= head-row rows)
               (< head-col 0) (>= head-col cols)
               (not (= (distinct snake-body) snake-body)))

@@ -66,11 +66,8 @@
         best (rf/subscribe [:score-best])
         score (rf/subscribe [:score-current])]
     (fn []
-      [:div.container-fluid {:onKeyPress      #(do
-                                                 (.preventDefault %)
-                                                 (println :key (.-charCode %)))
-                             :on-context-menu #(do (println :right)
-                                                   (.preventDefault %))}
+      [:div.container-fluid {:onKeyPress      #(.preventDefault %)
+                             :on-context-menu #(.preventDefault %)}
        [:div.row.center-xs
         [:div.col-xs-12
          [title]]]
