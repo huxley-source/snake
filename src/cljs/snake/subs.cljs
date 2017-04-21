@@ -1,51 +1,45 @@
 (ns snake.subs
-  (:require-macros [reagent.ratom :refer [reaction]])
   (:require [re-frame.core :as rf]
             [snake.utils :as utils]))
 
-(rf/reg-sub
-  :name
-  (fn [db]
-    (:name db)))
-
 
 (rf/reg-sub
-  :grid-rows
+  :grid/rows
   (fn [db _]
-    (get-in db [:grid 0])))
+    (get-in db [:grid/size 0])))
 
 
 (rf/reg-sub
-  :grid-cols
+  :grid/cols
   (fn [db _]
-    (get-in db [:grid 1])))
+    (get-in db [:grid/size 1])))
 
 (rf/reg-sub
-  :game-state
+  :app/state
   (fn [db _]
-    (get db :game-state)))
+    (get db :app/state)))
 
 (rf/reg-sub
-  :snake-body
+  :snake/body
   (fn [db _]
-    (get-in db [:snake :body])))
+    (get-in db [:snake/body])))
 
 (rf/reg-sub
-  :food-coords
+  :food/coords
   (fn [db _]
-    (get db :food-coords)))
+    (get db :food/coords)))
 
 (rf/reg-sub
-  :time-elapsed
+  :app/time-elapsed
   (fn [db _]
-    (utils/calc-elapsed-time (get db :time-started))))
+    (get db :app/time-elapsed)))
 
 (rf/reg-sub
-  :score-current
+  :score/current
   (fn [db _]
-    (get-in db [:score :current])))
+    (get-in db [:score/current])))
 
 (rf/reg-sub
-  :score-best
+  :score/best
   (fn [db _]
-    (get-in db [:score :best])))
+    (get-in db [:score/best])))

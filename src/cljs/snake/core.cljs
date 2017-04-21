@@ -24,7 +24,7 @@
                    (fn [e]
                      (.preventDefault e)
                      (when-let [direction (get utils/key-code->move (.-keyCode e))]
-                       (rf/dispatch [:change-direction direction]))))
+                       (rf/dispatch [:snake/change-direction direction]))))
 
 
 (defn ^:export init []

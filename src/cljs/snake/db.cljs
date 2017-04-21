@@ -1,14 +1,13 @@
 (ns snake.db)
 
 (def default-db
-  {:name             "snake"
-   :move-interval-id nil
-   :game-state       :paused
-   :snake            {:block     false
-                      :direction []
-                      :body      []}
-   :grid             [32 32]
-   :food-coords      nil
-   :score            {:best    0
-                      :current 0}
-   :time-started     0})
+  {:app/interval-id  nil
+   :app/state        :paused
+   :app/time-started nil
+   :app/time-elapsed nil
+   :grid/size        [32 32]
+   :food/coords      nil
+   :score/best       0
+   :score/current    0
+   :snake/direction  []
+   :snake/boody      []})

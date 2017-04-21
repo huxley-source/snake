@@ -1,10 +1,10 @@
 (ns snake.utils)
 
-(def key-code->move
-  {37 [0 -1]
-   38 [-1 0]
-   39 [0 1]
-   40 [1 0]})
+(def key-code->move                                         ;przekształcenie kodu klawisza na wektor []
+  {37 [0 -1]                                                ;strzałka v
+   38 [-1 0]                                                ;strzałka <
+   39 [0 1]                                                 ;strzałka ^
+   40 [1 0]})                                               ;strzałka >
 
 (defn random-coords
   [[rows cols]]
